@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Основной домен</title>
+    <script>
+      document.domain = "test1.com";
+
+      function callSubdomainFunction() {
+        var iframe = document.getElementById("subdomainFrame");
+        const app =
+          iframe.contentWindow.showMessageFromMainDomain("Привет, поддомен!");
+        console.log(app);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Это страница основного домена</h1>
+
+    <iframe
+      id="subdomainFrame"
+      src="https://test.test1.com"
+      allow="cross-origin-isolated"
+      sandbox="allow-scripts"
+      onload="callSubdomainFunction()"
+    ></iframe>
+
+    <iframe
+      frameborder="0"
+      src="https://embed.diagrams.net/?proto=json&amp;spin=1&amp;ui=min&amp;libraries=1"
+    ></iframe>
+  </body>
+</html>

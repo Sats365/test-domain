@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Поддомен</title>
+    <script>
+      const resultBuffer = new SharedArrayBuffer(10);
+      document.domain = "test1.com";
+      function showMessageFromMainDomain(message) {
+        return "asdfasdf";
+      }
+    </script>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, interactive-widget=resizes-content, viewport-fit=cover"
+    />
+    <script>
+      const global = {};
+    </script>
+    <!-- <script type ="module" crossorigin src="/assets/index-QipI4cI9.js"></script> -->
+    <!-- <link rel="stylesheet" crossorigin href="/assets/index-CuesdH5l.css" /> -->
+  </head>
+
+  <body>
+    <div data-qa="app" id="root"></div>
+  </body>
+</html>
